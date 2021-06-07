@@ -19,11 +19,12 @@ In this section, you will download all necessary tools to add a basic system cal
     -Download the source code of the latest stable version of the Linux kernel (which is 5.8.1 as of 12 August 2020) to your home folder.
       by "wget -P ~/ https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.8.1.tar.xz"
       
-         screen--------------------------------------------------------------
+      ![download kernal](https://user-images.githubusercontent.com/83427972/120956663-53150980-c754-11eb-8bc9-46df18c93c07.png)
+      
       
     -Unpack the tarball you just downloaded to your home folde by "tar -xvf ~/linux-5.8.1.tar.xz -C ~/"
     
-          screen--------------------------------------------------------------
+     ![extract kernal](https://user-images.githubusercontent.com/83427972/120956567-19440300-c754-11eb-8110-a10f12c0c903.png)
     
     - Reboot your computer.
     
@@ -35,7 +36,7 @@ In this section, you will write a basic system call in C and integrate it into t
     - Create the home directory of your system call by "mkdir identity"
     - Create a C file for your system call by "nano identity/identity.c"
 
-    screen-----------------------------------------------------------
+    ![the c program](https://user-images.githubusercontent.com/83427972/120956745-835ca800-c754-11eb-9c8f-005c09686108.png)
 
     - Create a Makefile for your system call by "nano identity/Makefile"
      Write the following code in it "obj-y := identity.o"
