@@ -24,7 +24,7 @@ In this section, you will download all necessary tools to add a basic system cal
       
     -Unpack the tarball you just downloaded to your home folde by "tar -xvf ~/linux-5.8.1.tar.xz -C ~/"
     
-     ![extract kernal](https://user-images.githubusercontent.com/83427972/120956567-19440300-c754-11eb-8110-a10f12c0c903.png)
+ ![extract kernal](https://user-images.githubusercontent.com/83427972/120956567-19440300-c754-11eb-8110-a10f12c0c903.png)
     
     - Reboot your computer.
     
