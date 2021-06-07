@@ -36,7 +36,7 @@ In this section, you will write a basic system call in C and integrate it into t
     - Create the home directory of your system call by "mkdir identity"
     - Create a C file for your system call by "nano identity/identity.c"
 
-    ![the c program](https://user-images.githubusercontent.com/83427972/120956745-835ca800-c754-11eb-9c8f-005c09686108.png)
+ ![the c program](https://user-images.githubusercontent.com/83427972/120956745-835ca800-c754-11eb-9c8f-005c09686108.png)
 
     - Create a Makefile for your system call by "nano identity/Makefile"
      Write the following code in it "obj-y := identity.o"
@@ -46,21 +46,22 @@ In this section, you will write a basic system call in C and integrate it into t
     kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ block/  , Add the home directory of your system call at the end like the following.
     kernel/ certs/ mm/ fs/ ipc/ security/ crypto/ block/ identity/
 
-     screen-----------------------------------------------------------
+![edit in the make file](https://user-images.githubusercontent.com/83427972/120957190-85733680-c755-11eb-9338-ce044cbc3784.png)
+
 
     - Add a corresponding function prototype for your system call to the header file of system calls
     by "nano include/linux/syscalls.h" and then 
     Navigate to the bottom of it and write the following code just above #endif.
     asmlinkage long sys_identity(void);
     
-    screen-----------------------------------------------------------
+ ![prototype](https://user-images.githubusercontent.com/83427972/120957250-9fad1480-c755-11eb-8206-caf6675d54ce.png)
 
     - Add your system call to the kernel's system call table by "nano arch/x86/entry/syscalls/syscall_64.tbl" and then
     Navigate to the bottom of it. You will find a series of x32 system calls. Scroll to the section above it. 
     Add the following code at the end of this section respecting the chronology of the row as well as the format of the column. Use Tab for space.
     440     common  identity                sys_identity
     
-    screen-----------------------------------------------------------
+![table](https://user-images.githubusercontent.com/83427972/120957303-b6ec0200-c755-11eb-8880-731f06e78c8a.png)
 
 
 3 - Installation
@@ -68,6 +69,8 @@ In this section, you will install the new kernel and prepare your operating syst
 
     - Configure the kernel.
     - Make sure the window of your terminal is maximized. Open the configuration window with the following command by "make menuconfig" .
+
+![confi](https://user-images.githubusercontent.com/83427972/120957373-d3883a00-c755-11eb-9a41-d4d319281ec1.png)
 
     - Compile the kernel's source code by "make -j2"
 
