@@ -19,7 +19,7 @@ In this section, you will download all necessary tools to add a basic system cal
     -Download the source code of the latest stable version of the Linux kernel (which is 5.8.1 as of 12 August 2020) to your home folder.
       by "wget -P ~/ https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.8.1.tar.xz"
       
-      ![download kernal](https://user-images.githubusercontent.com/83427972/120956663-53150980-c754-11eb-8bc9-46df18c93c07.png)
+ ![download kernal](https://user-images.githubusercontent.com/83427972/120956663-53150980-c754-11eb-8bc9-46df18c93c07.png)
       
       
     -Unpack the tarball you just downloaded to your home folde by "tar -xvf ~/linux-5.8.1.tar.xz -C ~/"
