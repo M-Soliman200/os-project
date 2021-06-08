@@ -13,7 +13,7 @@ there are four steps to add a simple system call to the Linux kernel.
 1-Preparation:
 In this section, you will download all necessary tools to add a basic system call to the Linux kernel and run it.
 
-    -Fully update your operating system bt "sudo apt update && sudo apt upgrade -y"
+    -Fully update your operating system by "sudo apt update && sudo apt upgrade -y"
     -Download and install the essential packages to compile kernels. by "sudo apt install build-essential libncurses-dev libssl-dev libelf-dev bison flex -y"
     -Clean up your installed packages. by "Clean up your installed packages."
     -Download the source code of the latest stable version of the Linux kernel (which is 5.8.1 as of 12 August 2020) to your home folder.
@@ -74,9 +74,9 @@ In this section, you will install the new kernel and prepare your operating syst
 
     - Compile the kernel's source code by "make -j2"
 
-    - Prepare the installer of the kernel by "sudo make modules_install -j12"
+    - Prepare the installer of the kernel by "sudo make modules_install -j2"
  
-    - Install the kernel "sudo make install -j12"
+    - Install the kernel "sudo make install -j2"
 
     - Update the bootloader of the operating system with the new kernel.sudo update-grub
 
@@ -84,6 +84,58 @@ In this section, you will install the new kernel and prepare your operating syst
 
 4 - Result
 In this section, you will write a C program to check whether your system call works or not. After that, you will see your system call in action.
+
+    - Check the version of your current kernel by "uname -r"
+    
+![version update](https://user-images.githubusercontent.com/83427972/121245231-13f3cf00-c8a0-11eb-9fe6-03c7495fa7cb.png)
+
+
+    -  Change your working directory to your home directory by "cd ~"
+
+    - Create a C file to generate a report of the success or failure of your system call by "nano report.c"
+        Write the following code in it.
+        
+                #include <linux/kernel.h>
+                #include <sys/syscall.h>
+                #include <stdio.h>
+                #include <unistd.h>
+                #include <string.h>
+                #include <errno.h>
+
+                #define __NR_identity 440
+
+                long identity_syscall(void)
+                {
+                return syscall(__NR_identity);
+                }
+
+                int main(int argc, char *argv[])
+                {
+                long activity;
+                activity = identity_syscall();
+
+                if(activity < 0)
+                {
+                    perror("Sorry, Jasper. Your system call appears to have failed.");
+                }
+
+                else
+                {
+                    printf("Congratulations, Jasper! Your system call is functional. Run the command dmesg in the terminal and find out!\n");
+                }
+
+                return 0;
+                }
+            
+    - Compile the C file you just created by "gcc -o report report.c"
+    -Run the C file you just compiled "./report"
+    If it displays the following, everything is working as intended  "Congratulations, Jasper! Your system call is functional.
+    Run the command dmesg in the terminal and find out what you get ?
+![vlaid message](https://user-images.githubusercontent.com/83427972/121245181-02aac280-c8a0-11eb-8643-819c2e2ca523.png)
+
+    - Check the last line of the dmesg output "dmesg"
+    - At the bottom, you should now see the team name "Mahmoud Soliman & yasser alanasry"
+![the name of the team](https://user-images.githubusercontent.com/83427972/121245096-ec046b80-c89f-11eb-9bb0-630c972db474.png)
 
 
 
@@ -96,7 +148,5 @@ references:
  
  https://www.youtube.com/results?search_query=how+to+add+a+system+call+to+your+kernal
  
- 
-
-
+ https://dev.to/jasper/adding-a-system-call-to-the-linux-kernel-5-8-1-in-ubuntu-20-04-lts-2ga8
   
