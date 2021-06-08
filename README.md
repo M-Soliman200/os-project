@@ -1,5 +1,9 @@
 # os-project
 
+Student names:
+-Mahmoud Soliman Ahmed
+-yasser alansary
+
 Description of my system is :
 CPU :Intel® Core™ i5 CPU M 450 @ 2.40GHz × 2 
 cores :2
