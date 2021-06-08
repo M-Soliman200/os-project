@@ -86,9 +86,6 @@ In this section, you will install the new kernel and prepare your operating syst
 In this section, you will write a C program to check whether your system call works or not. After that, you will see your system call in action.
 
     - Check the version of your current kernel by "uname -r"
-    
-![version update](https://user-images.githubusercontent.com/83427972/121245231-13f3cf00-c8a0-11eb-9fe6-03c7495fa7cb.png)
-
 
     -  Change your working directory to your home directory by "cd ~"
 
